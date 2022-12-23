@@ -86,7 +86,9 @@ Here is an example of running the program with a point which is within the field
 
 The data provided is based on permit assignment and is probably not very useful for determining the location of the food trucks.
 A better solution would be to use real-time data from the trucks themselves.
-<br/>
+
+
 Getting the distance and bearing calculations to work properly took considerably more time than expected.
-<br/>
+
+
 I would have liked to write more tests and do some additional refactoring.
