@@ -1,9 +1,11 @@
 defmodule GeoMath do
   # earth's mean radius
-  # 3859sm = 3440nm
-  @km_radius 6371 # Kilometers
-  @nm_radius 3440.07 # Nautical miles
-  @sm_radius 3963.19 # Statute miles
+  # Kilometers
+  @km_radius 6371
+  # Nautical miles
+  @nm_radius 3440.07
+  # Statute miles
+  @sm_radius 3963.19
 
   def km_radius(), do: @km_radius
 
@@ -23,12 +25,16 @@ defmodule GeoMath do
 
     diff_lon = to_radians(lon2 - lon1)
 
-    x = :math.cos(lat1_rad) * :math.sin(lat2_rad) - :math.sin(lat1_rad) *
-      :math.cos(lat2_rad) * :math.cos(diff_lon)
+    x =
+      :math.cos(lat1_rad) * :math.sin(lat2_rad) -
+        :math.sin(lat1_rad) *
+          :math.cos(lat2_rad) * :math.cos(diff_lon)
+
     y = :math.sin(diff_lon) * :math.cos(lat2_rad)
+
     :math.atan2(y, x)
-      |> to_degrees()
-      |> wrap_360_degrees()
+    |> to_degrees()
+    |> wrap_360_degrees()
   end
 
   # Haversine is better than law of cosines for short distances
@@ -39,9 +45,11 @@ defmodule GeoMath do
     diff_lat = to_radians(lat2 - lat1)
     diff_lon = to_radians(lon2 - lon1)
 
-    a = :math.sin(diff_lat / 2) * :math.sin(diff_lat / 2) +
-      :math.cos(lat1_rad) * :math.cos(lat2_rad) *
-      :math.sin(diff_lon / 2) * :math.sin(diff_lon / 2)
+    a =
+      :math.sin(diff_lat / 2) * :math.sin(diff_lat / 2) +
+        :math.cos(lat1_rad) * :math.cos(lat2_rad) *
+          :math.sin(diff_lon / 2) * :math.sin(diff_lon / 2)
+
     2 * :math.atan2(:math.sqrt(a), :math.sqrt(1 - a))
   end
 
@@ -58,6 +66,6 @@ defmodule GeoMath do
   end
 
   defp wrap_360_degrees(degrees) do
-    :math.fmod(360, (degrees + 360))
+    :math.fmod(360, degrees + 360)
   end
 end
