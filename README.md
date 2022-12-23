@@ -27,7 +27,7 @@ Some data does not have latitude and longitude and so those entries appear at th
 
 ## Geo Calculations
 
-The calculations for distance and bearing were obtainied usin the following resources:
+The calculations for distance and bearing were obtainied using the following resources:
 
 [Movable Type Scripts](http://www.movable-type.co.uk/scripts/latlong.html)
 
@@ -84,5 +84,9 @@ Here is an example of running the program with a point which is within the field
 
 ## Conclusions
 
-The data provided is based on permit assignment and is probably not very useful for determining the location food trucks.
+The data provided is based on permit assignment and is probably not very useful for determining the location of the food trucks.
 A better solution would be to use real-time data from the trucks themselves.
+<br/>
+Getting the distance and bearing calculations to work properly took considerably more time than expected.
+<br/>
+I would have liked to write more tests and do some additional refactoring.
