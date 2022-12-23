@@ -1,21 +1,20 @@
 # Foody
 
-**TODO: Add description**
+The idea is to identify food trucks in San Francisco which are closest to your location.
 
-## Installation
+The application accepts a latitude and longitude (presumably in San Francisco) in decimal format
+and calculates the distance and bearing from that point to each of the food
+trucks listed at the following url:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `foody` to your list of dependencies in `mix.exs`:
+"https://data.sfgov.org/resource/rqzj-sfat.json"
 
-```elixir
-def deps do
-  [
-    {:foody, "~> 0.1.0"}
-  ]
-end
-```
+## Obtaining Latitude and Longitude
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/foody>.
+Latitude and longitude may be obtained by right clicking a location in Google
+maps.
+
+## Filtering
+
+Data is filtered by vendors whos status is approved.
+It is assumed that other vendors are not actively operating.
 
